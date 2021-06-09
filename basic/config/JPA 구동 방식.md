@@ -23,7 +23,7 @@ public class JpaMain {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory(persistenceUnitName);
         EntityManager em = emf.createEntityManager();
 
-        // JPA 는 모두 Transcation 안에서 작동해야 한다.
+        // JPA 는 모두 Transaction 안에서 작동해야 한다.
         EntityTransaction tx = em.getTransaction();
         tx.begin();
 
