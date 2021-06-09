@@ -4,6 +4,12 @@ Everything about the JPA
 
 > [Docs](https://docs.spring.io/spring-data/jpa/docs/)
 
+## Inflearn Lecture Projects
+
+- [자바 ORM 표준 JPA 프로그래밍 - 기본편](https://github.com/BAEKJungHo/inflearn-jpa-project-basic)
+- [인프런. 실전! 스프링 부트와 JPA 활용 1 - 웹 애플리케이션 개발](https://github.com/BAEKJungHo/inflearn-jpa-project-advance-1)
+- [인프런. 실전! QueryDSL](https://github.com/BAEKJungHo/querydsl-study)
+
 ## References
 
 - 자바 ORM 표준 JPA
