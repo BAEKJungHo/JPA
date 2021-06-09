@@ -6,21 +6,37 @@
   1. 설정 정보 조회 : META-INF/persistence.xml
   2. Persistence -> EntityManagerFactory 생성 -> EntityManager 생성
 
+- `가장 기초적이고 정석적인 방식`
+
 ```java
-EntityManagerFactory emf = Persistence.createEntityManagerFactory(persistenceUnitName);
-EntityManager em = emf.createEntityManager();
+public class JpaMain {
 
-// JPA 는 모두 Transcation 안에서 작동해야 한다.
-EntityTransaction tx = em.getTransaction();
-tx.begin();
+    private static final String persistenceUnitName = "hello";
 
-Member member = new Member();
-member.setId(1L);
-member.setName("HelloA");
-em.persist(member);
+    public static void main(String[] args) {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory(persistenceUnitName);
+        EntityManager em = emf.createEntityManager();
 
-tx.commit();
+        // JPA 는 모두 Transcation 안에서 작동해야 한다.
+        EntityTransaction tx = em.getTransaction();
+        tx.begin();
 
-em.close();
-emf.close();
+        try {
+            Member member = new Member();
+            member.setId(1L);
+            member.setName("HelloA");
+            em.persist(member);
+
+            tx.commit();
+        } catch(Exception e) {
+            tx.rollback();
+        } finally {
+            em.close();
+        }
+
+        emf.close();
+    }
+
+}
+
 ```
