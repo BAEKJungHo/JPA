@@ -1,7 +1,7 @@
 # JPA 설정하기
 
 - persistence.xml : JPA 설정 파일
-  - /META-INF/persistence.xml 위치
+  - resources/META-INF/persistence.xml 위치
   - persistence-unit name 으로 이름 지정
   - javax.persistence로 시작 : JPA 표준 속성
   - hibernate로 시작 : 하이버네이트 전용 속성
